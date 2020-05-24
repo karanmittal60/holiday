@@ -1,0 +1,28 @@
+
+.collection-card {
+    width: 320px;
+    height: 300px;
+    border-radius: 20px;
+    margin: 30px;
+    /*background: transparent url('img/Mask Group 28.png') 0% 0% no-repeat padding-box;*/
+    opacity: 1;
+    position: relative;
+}
+
+.c-card-title{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    height: 130px;
+    width: 100%;
+    background-color: #707070;
+    opacity: 0.5;
+    color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    word-break: break-word;
+}

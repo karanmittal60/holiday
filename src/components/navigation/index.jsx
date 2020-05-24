@@ -1,5 +1,8 @@
 import React from 'react';
+import './navigation.css';
 import {routeRules} from "../../routes/routeRules";
+import Divider from "../divider";
+import {NavLink} from "react-router-dom";
 
 const Navigation = () => {
 
@@ -11,17 +14,24 @@ const Navigation = () => {
         {id: 'contact', title: 'CONTACT', routes: routeRules.contact},
     ]
     return (
-        <div>
+        <div className="navigation">
             {
                 navArray.map((menu, index) => {
                     return (
-                        <div>
-                            {menu.title}
-                        </div>
+                        <>
+                            <NavLink
+                                to={menu.routes}
+                                activeClassName="selected"
+                                className="nav-item"
+                            >
+                                {menu.title}
+                            </NavLink>
+                            {navArray.length-1 > index ? <Divider/> : <></>}
+                        </>
                     )
                 })
             }
-            
+
         </div>
     );
 };

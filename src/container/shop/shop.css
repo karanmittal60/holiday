@@ -1,0 +1,40 @@
+
+
+.product-table {
+    color: #262626;
+    font-size: 21px;
+}
+
+.product-table thead{
+    background-color: #F1F1F1;
+}
+
+.product-list-card {
+    width: 100%;
+    /*height: 200px;*/
+    text-align: center;
+}
+
+.product-c {
+    display: flex;
+    height: 100%;
+}
+
+.product-list-card>td>div{
+    margin: auto 15px;
+}
+
+.product-list-card>td{
+    vertical-align: middle !important;
+}
+
+.buy-now{
+    height: 90px;
+    width: 220px;
+    background: #0654AE 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    opacity: 1;
+    color: #fff;
+    padding: 12px;
+    margin: 30px 90px;
+}

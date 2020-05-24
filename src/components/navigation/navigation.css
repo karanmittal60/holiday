@@ -1,0 +1,16 @@
+.navigation{
+    display: flex;
+    font-size: 21px;
+    margin: 70px 0;
+}
+
+.nav-item {
+    color: #fff;
+}
+.nav-item:hover{
+    color: #44CCFF;
+    text-decoration: unset;
+}
+.nav-item.selected {
+    color: #44CCFF;
+}
