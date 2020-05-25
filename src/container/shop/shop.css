@@ -20,6 +20,11 @@
     height: 100%;
 }
 
+.p-image {
+    width: 162px;
+    height: 162px;
+}
+
 .product-list-card>td>div{
     margin: auto 15px;
 }
@@ -37,4 +42,10 @@
     color: #fff;
     padding: 12px;
     margin: 30px 90px;
+}
+
+.total-row{
+    background-color: #E2E2E2;
+    border: 1px solid #B2B2B2;
+    height: 50px;
 }

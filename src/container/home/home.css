@@ -1,0 +1,10 @@
+
+.prod-heading{
+    text-align: left;
+    font: Bold 45px/33px Montserrat;
+    letter-spacing: 0;
+    color: #262626;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 40px 0;
+}

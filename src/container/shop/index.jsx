@@ -2,16 +2,34 @@ import React from 'react';
 import './shop.css';
 import SecondaryHeader from "../../components/secondaryHeader";
 import productImage1 from "./../../assets/img/product1.png";
+import usePikachu from "../../hooks/usePikachu";
 
 const Shop = () => {
+    const {cart, removeFromCart, onChangeProductQty} = usePikachu();
 
-    const productArray = [
-        {id: '1', name: 'sample product 1', image: productImage1, price: '200', color: 'Red', size: 'L', qty: 1},
-        {id: '2', name: 'sample product 1', image: 'assets/img/product1', price: '200', color: 'Red', size: 'L', qty: 1},
-        {id: '3', name: 'sample product 1', image: 'assets/img/product1', price: '200', color: 'Red', size: 'L', qty: 1},
-        {id: '4', name: 'sample product 1', image: 'assets/img/product1', price: '200', color: 'Red', size: 'L', qty: 1},
-        {id: '5', name: 'sample product 1', image: 'assets/img/product1', price: '200'  , color: 'Red', size: 'L', qty: 1},
-    ]
+    const deleteProductFromCart = (prod) => {
+        removeFromCart(prod)
+    }
+
+    const onChangeQty = (product, type) => {
+        if (product.qty <= 1 && type === 'd'){
+            removeFromCart(product)
+        } else {
+            onChangeProductQty(product, type)
+        }
+    }
+
+    const totalAmount = () => {
+        let total = 0;
+
+        for (let prod of cart){
+            const amt = prod.qty * prod.cost;
+            total = total + amt;
+        }
+
+        return total;
+    }
+
     return (
         <div>
             <SecondaryHeader black={true}/>
@@ -28,46 +46,67 @@ const Shop = () => {
                     </thead>
                     <tbody>
                     {
-                        productArray.map(product => {
-                            return (
-                                <tr key={product.id} className='product-list-card'>
-                                    <td className="product-c">
-                                        <div>
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div>
-                                            <img src={productImage1} alt=""/>
-                                        </div>
-                                        <div className="text-left">
-                                            <span> {product.name}</span><br/>
-                                            <span> Color: {product.color}</span><br/>
-                                            <span> Size: {product.size}</span><br/>
-                                        </div>
-                                    </td>
-                                    <td>${product.price}</td>
-                                    <td>
-                                        <span><i className="fa fa-plus-circle"></i></span>
-                                        <span className="mr-2 ml-2">
+                        cart &&
+                        cart.length> 0 ?
+                            cart.map(product => {
+                                return (
+                                    <tr key={product.id} className='product-list-card'>
+                                        <td className="product-c">
+                                            <div>
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div>
+                                                <img className="p-image" src={product.image} alt=""/>
+                                            </div>
+                                            <div className="text-left">
+                                                <span> {product.title}</span><br/>
+                                                <span> Color: {product.color}</span><br/>
+                                                <span> Size: {product.size}</span><br/>
+                                            </div>
+                                        </td>
+                                        <td>${product.cost}</td>
+                                        <td>
+                                            <span onClick={() => onChangeQty(product,'i')}><i className="fa fa-plus-circle"/></span>
+                                            <span className="mr-2 ml-2">
                                             {product.qty}
                                         </span>
-                                        <span><i className="fa fa-minus-circle"></i></span>
-                                    </td>
-                                    <td>${product.price * product.qty}</td>
-                                    <td>
-                                        <i className="fa fa-trash"></i>
-                                    </td>
-                                </tr>
-                            )
-                        })
+                                            <span onClick={() => onChangeQty(product, 'd')}><i className="fa fa-minus-circle"/></span>
+                                        </td>
+                                        <td>${product.cost * product.qty}</td>
+                                        <td>
+                                        <span>
+                                            <i className="fa fa-trash" onClick={() => deleteProductFromCart(product)}/>
+                                        </span>
+                                        </td>
+                                    </tr>
+                                )
+                            }): <tr className="text-center">
+                                <td colSpan={5}>
+                                    Your cart is empty
+                                </td>
+                            </tr>
                     }
+                    <tr className="total-row">
+                        <td colSpan="3" className="text-right">
+                            Total
+                        </td>
+                        <td colSpan={2}>
+                            {totalAmount()}
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
 
 
-            <div className="text-right">
-                <button className="buy-now">BUY NOW</button>
-            </div>
+            {
+                cart && cart.length > 0 ? (
+                        <div className="text-right">
+                            <button className="buy-now">BUY NOW</button>
+                        </div>
+                    )
+                    : <></>
+            }
         </div>
     );
 };

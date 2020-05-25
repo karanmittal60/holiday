@@ -1,26 +1,26 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import './home.css';
-import products from './productData.json'
+import {products} from './productData.js'
 import SecondaryHeader from "../../components/secondaryHeader";
 import CollectionCard from "../../components/collectionCard";
-
 import womenCollection from './../../assets/img/womenCollection.jpg'
 import menCollection from './../../assets/img/menCollection.jpg'
 import ProductCard from "../../components/productCard";
-import PaymentSuccess from "../../components/paymentSuccess";
 import productImage1 from "./../../assets/img/productImage1.png";
 import menProduct1 from "./../../assets/img/menProduct1.jpeg";
+import usePikachu from "../../hooks/usePikachu";
 
 const Home = () => {
 
+    const {cart, addToCart} = usePikachu();
     const [collectionType, setCollectionType] = useState("");
 
     const handleCardClick = (type) => {
         setCollectionType(type)
     }
 
-    const addToCart = (id) => {
-        console.log("id==>", id);
+    const addProductToCart = (product) => {
+        addToCart(product)
     }
 
     return (
@@ -51,6 +51,11 @@ const Home = () => {
                     </div>
                     : <>
                         <div className="container mt-4">
+                            <div className="prod-heading">
+                                <span>
+                                    products
+                                </span>
+                            </div>
                             <div className="row">
                                 {
                                     products.map(prod => {
@@ -58,12 +63,12 @@ const Home = () => {
                                             return (
                                                 <ProductCard
                                                     id={prod.id}
-                                                    image={prod.type == 'men' ? menProduct1 : productImage1}
+                                                    image={prod.image}
                                                     star={prod.star}
                                                     title={prod.title}
                                                     description={prod.description}
                                                     cost={prod.cost}
-                                                    addToCart={addToCart}
+                                                    addToCart={() => addProductToCart(prod)}
                                                 />
                                             )
                                         }
@@ -73,8 +78,6 @@ const Home = () => {
                         </div>
                     </>
             }
-
-
 
         </div>
     );

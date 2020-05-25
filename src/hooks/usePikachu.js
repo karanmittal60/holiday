@@ -5,42 +5,61 @@ const usePikachu = () => {
 
     const [state, setState] = React.useContext(AppContext);
 
-    function setToken(token) {
+    function addToCart(product) {
         setState(prevState => {
             return {
                 ...prevState,
-                token: token
+                cart: [...prevState.cart, product]
             }
         })
     }
 
-    function setUserDetails(details) {
+    function removeFromCart(product) {
         setState(prevState => {
             return {
                 ...prevState,
-                userDetails: details
+                cart: prevState.cart.filter(prod => prod.id !== product.id)
             }
         })
     }
 
-    function setUsersData(data) {
+    function onEditCart(product) {
         setState(prevState => {
             return {
                 ...prevState,
-                usersData: data
+                cart: [...prevState.cart.filter(prod => prod.id !== product.id), product]
+            }
+        })
+    }
+
+    function onChangeProductQty(product, type) {
+        let cloneCart = state.cart;
+
+        let prodIndex = cloneCart.findIndex(prod => prod.id === product.id);
+
+        if (type === 'd'){
+            cloneCart[prodIndex].qty--
+        } else {
+            cloneCart[prodIndex].qty++
+        }
+        setState(prevState => {
+            return {
+                ...prevState,
+                cart: cloneCart
             }
         })
     }
 
     return {
-        token: state.token,
-        setToken,
+        cart: state.cart,
 
-        setUserDetails,
-        userDetails: state.userDetails,
+        addToCart,
 
-        setUsersData,
-        usersData: state.usersData,
+        removeFromCart,
+
+        onEditCart,
+
+        onChangeProductQty
     }
 };
 

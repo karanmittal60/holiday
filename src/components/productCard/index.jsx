@@ -41,7 +41,7 @@ const ProductCard = ({ id, image=productImage1, star=3, title="", description=""
                     <div className="p-c-cost">
                         <span className="cost">${cost}</span>
                         <button className="btn" onClick={() => addToCart(id)}>
-                            <i className="fa fa-shopping-cart"></i>
+                            <i className="fa fa-shopping-cart" />
                             ADD TO CART
                         </button>
                     </div>

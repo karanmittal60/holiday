@@ -4,10 +4,7 @@ export const AppContext = React.createContext();
 
 export const AppProvider = (props) => {
     const initialSate = {
-        token: "",
-        userDetails: null,
-        usersData: [],
-
+       cart: []
     };
 
     const [state, setState] = React.useState(initialSate);
