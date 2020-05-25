@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd09aa69ce76a99e06e62b0c0de96d7e",
+    "revision": "82e54584bcfaed7a62e565756baa31b5",
     "url": "/holiday/index.html"
   },
   {
-    "revision": "0d5a7d2608b1a0da7768",
+    "revision": "3152695f201d034517ba",
     "url": "/holiday/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "95e770de796226a5a0e2",
-    "url": "/holiday/static/css/main.6257b9aa.chunk.css"
+    "revision": "305e4ad172be98de57bf",
+    "url": "/holiday/static/css/main.ddb1811b.chunk.css"
   },
   {
-    "revision": "0d5a7d2608b1a0da7768",
-    "url": "/holiday/static/js/2.299285ba.chunk.js"
+    "revision": "3152695f201d034517ba",
+    "url": "/holiday/static/js/2.bf5e8348.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/holiday/static/js/2.299285ba.chunk.js.LICENSE.txt"
+    "url": "/holiday/static/js/2.bf5e8348.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "95e770de796226a5a0e2",
-    "url": "/holiday/static/js/main.5936a4b8.chunk.js"
+    "revision": "305e4ad172be98de57bf",
+    "url": "/holiday/static/js/main.cb756ce0.chunk.js"
   },
   {
     "revision": "cfd7443d87f50155bc7e",

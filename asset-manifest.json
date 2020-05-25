@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/holiday/static/css/main.6257b9aa.chunk.css",
-    "main.js": "/holiday/static/js/main.5936a4b8.chunk.js",
-    "main.js.map": "/holiday/static/js/main.5936a4b8.chunk.js.map",
+    "main.css": "/holiday/static/css/main.ddb1811b.chunk.css",
+    "main.js": "/holiday/static/js/main.cb756ce0.chunk.js",
+    "main.js.map": "/holiday/static/js/main.cb756ce0.chunk.js.map",
     "runtime-main.js": "/holiday/static/js/runtime-main.25a37ca4.js",
     "runtime-main.js.map": "/holiday/static/js/runtime-main.25a37ca4.js.map",
     "static/css/2.af3c1da9.chunk.css": "/holiday/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.299285ba.chunk.js": "/holiday/static/js/2.299285ba.chunk.js",
-    "static/js/2.299285ba.chunk.js.map": "/holiday/static/js/2.299285ba.chunk.js.map",
+    "static/js/2.bf5e8348.chunk.js": "/holiday/static/js/2.bf5e8348.chunk.js",
+    "static/js/2.bf5e8348.chunk.js.map": "/holiday/static/js/2.bf5e8348.chunk.js.map",
     "index.html": "/holiday/index.html",
-    "precache-manifest.0ed0570868c812c1f59ec419c5116fa0.js": "/holiday/precache-manifest.0ed0570868c812c1f59ec419c5116fa0.js",
+    "precache-manifest.54216111f21a506ff37c64e7f1bb44ea.js": "/holiday/precache-manifest.54216111f21a506ff37c64e7f1bb44ea.js",
     "service-worker.js": "/holiday/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/holiday/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.6257b9aa.chunk.css.map": "/holiday/static/css/main.6257b9aa.chunk.css.map",
-    "static/js/2.299285ba.chunk.js.LICENSE.txt": "/holiday/static/js/2.299285ba.chunk.js.LICENSE.txt",
+    "static/css/main.ddb1811b.chunk.css.map": "/holiday/static/css/main.ddb1811b.chunk.css.map",
+    "static/js/2.bf5e8348.chunk.js.LICENSE.txt": "/holiday/static/js/2.bf5e8348.chunk.js.LICENSE.txt",
     "static/media/secondaryHeader.css": "/holiday/static/media/Image 1.b5d90c5c.png",
     "static/media/menCollection.jpg": "/holiday/static/media/menCollection.26b29d17.jpg",
     "static/media/menProduct1.jpeg": "/holiday/static/media/menProduct1.663488c3.jpeg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.25a37ca4.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.299285ba.chunk.js",
-    "static/css/main.6257b9aa.chunk.css",
-    "static/js/main.5936a4b8.chunk.js"
+    "static/js/2.bf5e8348.chunk.js",
+    "static/css/main.ddb1811b.chunk.css",
+    "static/js/main.cb756ce0.chunk.js"
   ]
 }
