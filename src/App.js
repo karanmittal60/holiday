@@ -12,7 +12,7 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path='/'>
-                        <Redirect to={routeRules.login}/>
+                        <Redirect to={routeRules.home}/>
                     </Route>
                     {
                         routesData.map(route => {
