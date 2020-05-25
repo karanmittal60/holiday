@@ -14,6 +14,9 @@ function App() {
                     <Route exact path='/'>
                         <Redirect to={routeRules.home}/>
                     </Route>
+                    <Route exact path='/holiday'>
+                        <Redirect to={routeRules.home}/>
+                    </Route>
                     {
                         routesData.map(route => {
                             if (route.auth){

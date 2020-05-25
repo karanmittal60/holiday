@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './shop.css';
 import SecondaryHeader from "../../components/secondaryHeader";
 import productImage1 from "./../../assets/img/product1.png";
 import usePikachu from "../../hooks/usePikachu";
+import PaymentSuccess from "../../components/paymentSuccess";
 
 const Shop = () => {
     const {cart, removeFromCart, onChangeProductQty} = usePikachu();
@@ -30,6 +31,20 @@ const Shop = () => {
         return total;
     }
 
+    const [success, setSuccess] = useState(false);
+
+    const buyNow = () => {
+        setSuccess(true)
+    }
+
+    if (success){
+        return (
+            <div>
+                <SecondaryHeader black={true}/>
+                <PaymentSuccess/>
+            </div>
+        )
+    }
     return (
         <div>
             <SecondaryHeader black={true}/>
@@ -102,7 +117,7 @@ const Shop = () => {
             {
                 cart && cart.length > 0 ? (
                         <div className="text-right">
-                            <button className="buy-now">BUY NOW</button>
+                            <button className="buy-now" onClick={buyNow} >BUY NOW</button>
                         </div>
                     )
                     : <></>
